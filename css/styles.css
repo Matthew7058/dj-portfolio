@@ -1,8 +1,23 @@
+@font-face {
+  font-family: Roobert;
+  src: url("../assets/fonts/Roobert/Roobert-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Roobert;
+  font-weight: bold;
+  src: url("../assets/fonts/Roobert/Roobert-Bold.otf") format("opentype");
+}
+
 body {
     background-color: #272727;
     color: #f6f6f6;
-    font-family: Arial, sans-serif;
+    font-family: 'Roobert', Arial, sans-serif;
+    letter-spacing: 0.4px;
+    line-height: 1.5;
+    overflow-x: hidden;
 }
+
 .main-section {
     margin-top: 70px;
     display: flex;
@@ -15,6 +30,22 @@ body {
     display: flex;
     flex-wrap: nowrap;
 }
+
+.header-container {
+  display: flex;
+  align-items: center; /* Align items vertically centered */
+}
+
+.music-logo-section {
+  margin-top: 20px;
+  margin-left: -4px;
+  font-family: "League Gothic", serif;
+  font-size: 1.5rem; /* Adjust the font size as needed */
+  transform: rotate(90deg); /* Rotate the text 90 degrees */
+  transform-origin: center; /* Adjust the origin point if needed */
+  color: #f6f6f6; /* Adjust the color as needed */
+}
+
 .text-section {
     flex: 1;
     max-width: 50%;
@@ -33,14 +64,14 @@ body {
     display: grid;
 }
 .text-section h1 {
-    font-family: "Rubik Glitch", serif;
     font-size: 6rem;
-    color: #f1c723; /* Light green */
+    color: #bcd000; /* Light green */
     text-align: left;
 }
 .text-section p {
+    font-weight: lighter;
     margin-top: -8%;
-    font-size: 2.7rem;
+    font-size: 2.3rem;
     margin-bottom: 70px;
     text-align: left;
     white-space: nowrap;
@@ -54,12 +85,12 @@ body {
 
 .text-section li {
     font-size: 2.2rem;
-    font-weight: bolder;
+    font-weight: bold;
     margin-bottom: -15px;
 }
 
 .text-section li:hover {
-    color: #f1c723;
+    color: #bcd000;
     cursor: pointer;
 }
 .image-section {
@@ -73,18 +104,18 @@ body {
 }
 
 .btn-learn-more {
-    background-color: #f1c723;
+    background-color: #bcd000;
     border: none;
-    border-radius: 5px;
+    border-radius: 0px;
     color: #000;
-    padding: 10px 20px;
+    padding: 10px 30px;
     text-transform: uppercase;
     transition: all 0.3s ease;
     margin: 0%;
 }
 
 .btn-learn-more:hover {
-    background-color: #f1c723;
+    background-color: #bcd000;
     color: #f6f6f6;
     cursor: pointer;
 }
@@ -94,6 +125,7 @@ body {
     scale: 1.3;
     margin-left: -120px;
     margin-top: -20px;
+    
 }
 
 .about-section {
@@ -117,18 +149,18 @@ body {
 .about-section h2 {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #f1c723;
+    color: #bcd000;
     margin-bottom: 25px;
 }
 
 .bio {
-    line-height: 1.3;
+  
 }
 
 .divider-line {
     width: 250px; /* Adjust width as needed */
     height: 2px; /* Thickness of the line */
-    background-color: #f1c723; /* Light green color matching the text */
+    background-color: #bcd000; /* Light green color matching the text */
     margin: 80px auto; /* Center the line and add spacing */
     border-radius: 5px; /* Rounded edges for a smoother look */
 }
@@ -163,7 +195,7 @@ body {
 }
 
 .btn-info:hover {
-    background-color: #f1c723; /* Highlighted green */
+    background-color: #bcd000; /* Highlighted green */
     color: #000;
 }
 
@@ -174,6 +206,10 @@ body {
 .paragraph p {
     margin-bottom: 0px;
     padding-top: 0px;
+}
+
+strong {
+    font-weight: bold;
 }
 
 .spikes {
@@ -197,7 +233,7 @@ body {
 
 /* Section styles */
 .upcoming-gigs {
-    background-color: #f1c723;
+    background-color: #bcd000;
     text-align: center;
     padding: 40px 20px;
     color: #000;
@@ -250,6 +286,17 @@ body {
     height: auto;
 }
 
+.image-container-2 {
+  position: relative;
+  width: 100%;
+}
+
+.image-container-2 img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .overlay {
     position: absolute;
     top: 0;
@@ -260,21 +307,39 @@ body {
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #1a1a1acc;
+    background-color: #f6f6f6cc;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
+#listen-image {
+  border: 2px solid #262626;
+  border-radius: 10px;
+  width: 90%;
+  margin: auto;
+}
+
 .image-container:hover .overlay {
     opacity: 1;
 }
 
+.image-container-2:hover .overlay {
+  opacity: 1;
+}
+
 .text {
-    color: #f6f6f6;
     font-size: 20px;
     padding: 10px;
+}
+
+.listen-spotify-image {
+  background-image: url('../assets/images/listen-spotify.png');
+  width: 100px; /* image width */
+    height: 100px; /* image height */
+  opacity: 1;
+  display: inline-block;
 }
 
 .mixes-section {
@@ -298,7 +363,7 @@ body {
 
 .spikes-2 {
     position: relative;
-    background: #f1c723;
+    background: #bcd000;
   }
   
   .spikes-2::after {
@@ -311,7 +376,7 @@ body {
     display: block;
     height: 15px;
     background-size: 15px 100%;
-    background-image: linear-gradient(135deg, #f1c723 25%, transparent 25%), linear-gradient(225deg, #f1c723 25%, transparent 25%);
+    background-image: linear-gradient(135deg, #bcd000 25%, transparent 25%), linear-gradient(225deg, #bcd000 25%, transparent 25%);
     background-position: 0 0;
   }
 
@@ -349,7 +414,7 @@ body {
   .dl-section h2 {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #f1c723;
+    color: #bcd000;
     margin-bottom: 40px;
   }
 
@@ -359,6 +424,70 @@ body {
     border-radius: 5px; /* Rounded corners */
     overflow: hidden;
     margin-bottom: 20px;
+}
+
+.my-logo {
+  position: relative;
+  display: inline-block;
+  font-size: 3rem;
+  /* Start in the normal font */
+  font-family: 'Rubik', sans-serif;
+  font-weight: 900;
+  /* Animate the discrete switch using 'steps(1)' 
+     so it instantly jumps at keyframes. */
+  animation: fontSwitch 6s steps(1, end) infinite;
+}
+
+/* This toggles between normal and glitch font. */
+.my-logo {
+  position: relative;
+  display: inline-block;
+}
+
+@keyframes fontSwitch {
+  /* Normal for first 60% */
+  0%, 9% {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 900;
+  }
+  /* Instant switch at 60% */
+  10%, 100% {
+    font-family: 'Rubik Glitch', sans-serif;
+    font-weight: normal;
+  }
+}
+
+@keyframes glitch2 {
+  0% {
+    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+    transform: translate(var(--glitch-translate));
+  }
+  2% {
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  4%, 20% {  text-shadow: none; transform: none; }
+  11% {
+    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+    transform: translate(var(--glitch-translate));
+  }
+  13% {
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  15%, 100% {  text-shadow: none; transform: none; }
+}
+
+/* Pseudo-element layers, etc... */
+.my-logo::before, .my-logo::after {
+  /* same code as before... */
+  content: attr(title);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.my-logo {
+  animation: fontSwitch 6s steps(1, end) infinite,
+            glitch2 6s linear infinite;
 }
 
 .card-title {
@@ -428,7 +557,7 @@ body {
   }
 
   .modal-close-2:hover {
-    background-color: #f1c723;
+    background-color: #bcd000;
   }
   
   /* Navigation Buttons (Previous and Next) */
@@ -447,7 +576,7 @@ body {
 
   .prev-2:hover,
   .next-2:hover {
-    background-color: #f1c723;
+    background-color: #bcd000;
   }
   
   /* Positioning next button to bottom-right */
@@ -515,7 +644,7 @@ body {
     background-color: #1a1a1a;
     border-radius: 50%;
     border-width: 1px;
-    border-color: #f1c723;
+    border-color: #bcd000;
     border-style: solid;
     display: inline-block;
     transition: background-color 0.3s;
@@ -523,15 +652,15 @@ body {
   
   /* Indicate the active dot */
   .dot.active {
-    background-color: #f1c723;
+    background-color: #bcd000;
     border-width: 1px;
-    border-color: #f1c723;
+    border-color: #bcd000;
     border-style: solid;
   }
 
   /* Section styles */
 .contacts {
-    background-color: #f1c723;
+    background-color: #bcd000;
     text-align: center;
     padding: 40px 20px;
     color: #000;
@@ -568,6 +697,10 @@ body {
 .column-social {
     flex: 20%;
     padding: 4px;
+}
+
+.column-social img {
+  border-radius: 5px;
 }
 
 #my-submit-btn {
@@ -623,11 +756,11 @@ svg {
     fill: #1a1a1a;
   }
   path#bottom {
-    fill: #f1c723
+    fill: #bcd000
   }
 
   path#top-1 {
-    fill: #f1c723;
+    fill: #bcd000;
   }
   path#bottom-1 {
     fill: #f6f6f6;
@@ -641,12 +774,13 @@ svg {
   }
 
 /* Styles for screens smaller than 480px (e.g., small mobile phones) */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
+
     .main-section {
         margin-top: 0px;
         display: flex;
         flex-wrap: wrap;
-        min-height: 800px;
+        min-height: 730px;
         position: relative;
         z-index: 1;
         display: flex;
@@ -654,12 +788,16 @@ svg {
         padding-left: 15px;
     }
 
+    .header-container {
+      margin-top: 20px;
+    }
+
     .btn-learn-more {
         visibility: hidden;
     }
 
     #my-sub-heading {
-        font-size: 30px;
+        font-size: 28px;
         padding-top: 0px;
         margin-top: -25px;
         font-weight: lighter;
@@ -669,13 +807,18 @@ svg {
         height: 800px;
         scale: 1.55;
         position: absolute;
-        margin-left: -200px;
-        margin-top: 250px;
+        margin-left: -220px;
+        margin-top: 240px;
         z-index: 0;
     }
 
+    .text-section h1 {
+        font-size: 5rem;
+    }
+    
     .text-section {
         z-index: 2;
+        margin-left: 15px;
     }
 
     .image-section {
@@ -692,8 +835,13 @@ svg {
         z-index: 2;
     }
 
+    .music-logo-section {
+      margin-top: 13px;
+      font-size: 1.3rem;
+    }    
+
     .text-section li {
-        font-size: 1.7rem;
+        font-size: 1.6rem;
         font-weight: bolder;
         margin-bottom: -5px;
         z-index: 2;
@@ -719,6 +867,10 @@ svg {
 
     .mobile-only {
         display: block;
+    }
+
+    .desktop-only {
+        display: none;
     }
 
     .next-3 {
@@ -807,6 +959,12 @@ svg {
         width: 100%;
         height: 100%;
       }
+
+      .slide-3 {
+        flex: 0 0 100%;
+        width: 100%;
+        height: 100%;
+      }
   
       /* Images */
       .slide img {
@@ -822,6 +980,12 @@ svg {
       }
 
       .slide-2 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .slide-3 video {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -874,13 +1038,14 @@ svg {
   
       /* Overlay content box */
       .overlay-content {
-        background-color: #ffffff;
+        background-color: #f6f6f6;
         padding: 20px;
         border-radius: 8px;
         text-align: center;
         width: 80%;
         max-width: 300px;
         position: relative;
+        overflow: hidden;
       }
   
       /* Close button */
@@ -898,17 +1063,45 @@ svg {
       .streaming-button {
         display: inline-block;
         margin: 10px;
-        padding: 10px 20px;
-        background-color: #007aff;
-        color: #fff;
-        border: none;
+        border-color: #262626;
         border-radius: 4px;
         text-decoration: none;
         cursor: pointer;
         transition: background-color 0.2s ease;
+        overflow: hidden;
       }
-      .streaming-button:hover {
-        background-color: #005bbb;
+
+      .streaming-button img {
+          width: 200px; /* Set the width of the image */
+          height: 100px; /* Set the height to crop the image */
+          background-color: #f6f6f6;
+          border: 2px solid #262626; /* Add a black border to the image */
+          border-radius: 10px;
+          object-fit: cover; /* Ensure the image covers the area */
+          display: block; /* Ensure the image is displayed as a block element */
+          margin-bottom: 10px; /* Add some space between the images */
+      }
+
+      .streaming-button-1 {
+        display: inline-block;
+        margin: 10px;
+        border-color: #262626;
+        border-radius: 4px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        overflow: hidden;
+      }
+
+      .streaming-button-1 img {
+          width: 100px; /* Set the width of the image */
+          height: 50px; /* Set the height to crop the image */
+          background-color: #f6f6f6;
+          border: 2px solid #262626; /* Add a black border to the image */
+          border-radius: 10px;
+          object-fit: cover; /* Ensure the image covers the area */
+          display: block; /* Ensure the image is displayed as a block element */
+          margin-bottom: 10px; /* Add some space between the images */
       }
 
       .dl-section img:hover {
@@ -919,9 +1112,9 @@ svg {
     }
 
     #show-mobile-row {
-        display: flex;
+        display: block;
         width: 100%;
-        margin: 0;
+        margin: 90px 0 10px 0;
         padding: 0;
     }
 
@@ -937,5 +1130,17 @@ svg {
         margin: 0;
         padding-right: 0px;
         padding-left: 5px;
+    }
+
+    .contacts {
+        padding-bottom: 50px;
+    }
+
+    .footer {
+        margin: 0px auto;
+    }
+
+    .footer-text {
+      margin-top: 30px;
     }
 }
