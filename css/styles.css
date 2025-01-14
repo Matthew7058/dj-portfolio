@@ -335,7 +335,6 @@ strong {
 }
 
 .listen-spotify-image {
-  background-image: url('../assets/images/listen-spotify.png');
   width: 100px; /* image width */
     height: 100px; /* image height */
   opacity: 1;
@@ -435,7 +434,6 @@ strong {
   font-weight: 900;
   /* Animate the discrete switch using 'steps(1)' 
      so it instantly jumps at keyframes. */
-  animation: fontSwitch 6s steps(1, end) infinite;
 }
 
 /* This toggles between normal and glitch font. */
@@ -446,12 +444,12 @@ strong {
 
 @keyframes fontSwitch {
   /* Normal for first 60% */
-  0%, 9% {
+  0%, 5% {
     font-family: 'Rubik', sans-serif;
     font-weight: 900;
   }
   /* Instant switch at 60% */
-  10%, 100% {
+  6%, 100% {
     font-family: 'Rubik Glitch', sans-serif;
     font-weight: normal;
   }
@@ -465,15 +463,15 @@ strong {
   2% {
     text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
   }
-  4%, 20% {  text-shadow: none; transform: none; }
-  11% {
+  4%, 12% {  text-shadow: none; transform: none; }
+  6% {
     text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
     transform: translate(var(--glitch-translate));
   }
-  13% {
+  8% {
     text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
   }
-  15%, 100% {  text-shadow: none; transform: none; }
+  10%, 100% {  text-shadow: none; transform: none; }
 }
 
 /* Pseudo-element layers, etc... */
@@ -486,8 +484,8 @@ strong {
 }
 
 .my-logo {
-  animation: fontSwitch 6s steps(1, end) infinite,
-            glitch2 6s linear infinite;
+  animation: fontSwitch 4s steps(1, end) infinite,
+            glitch2 2s linear infinite;
 }
 
 .card-title {
