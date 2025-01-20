@@ -1,10 +1,10 @@
 @font-face {
-  font-family: Roobert;
+  font-family: "Roobert";
   src: url("../assets/fonts/Roobert/Roobert-Light.otf") format("opentype");
 }
 
 @font-face {
-  font-family: Roobert;
+  font-family: "Roobert";
   font-weight: bold;
   src: url("../assets/fonts/Roobert/Roobert-Bold.otf") format("opentype");
 }
@@ -12,10 +12,9 @@
 body {
     background-color: #272727;
     color: #f6f6f6;
-    font-family: 'Roobert', Arial, sans-serif;
+    font-family: "Roobert", Arial, sans-serif;
     letter-spacing: 0.4px;
     line-height: 1.5;
-    overflow-x: hidden;
 }
 
 .main-section {
@@ -93,6 +92,7 @@ body {
     color: #bcd000;
     cursor: pointer;
 }
+
 .image-section {
     flex: 1;
     display: block;
@@ -725,6 +725,19 @@ strong {
     border-bottom: 100px solid #272727; /* Change to bottom for upward triangle */
 }
 
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
+  /* Adjust timing to your preference */
+}
+
+/* When in view, fade in */
+.fade-in-section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .overlay1 {
     display: none;
 }
@@ -735,6 +748,59 @@ strong {
 
 .slider {
     display: none;
+}
+
+/* Blurred effect: pointer-events none so user can't click the blurred form */
+.blurred {
+  filter: blur(3px);
+  pointer-events: none;
+}
+
+/* Overlay that appears on top of the blurred form */
+#successOverlay {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* A semi-transparent background that covers only this container area */
+  background-color: transparent;
+  display: none;           /* Hidden by default */
+  align-items: center;     /* For flex centering */
+  justify-content: center; /* For flex centering */
+  
+  /* Optional: If you want a higher z-index than the form's content */
+  z-index: 10;
+}
+
+/* A box inside the overlay for the success message */
+#successMessageContainer {
+  background: #fff;
+  max-width: 400px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.success-checkmark {
+  color: #4CAF50;
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+#formContainer {
+  position: relative;
+}
+
+#sendAnotherBtn {
+  background-color: #1a1a1a;
+  color: #f6f6f6;
+  border: 1px solid #272727;
+  border-radius: 3px;
+  padding: 2px, 12px;
+}
+
+#sendAnotherBtn:hover {
+  cursor: pointer;
 }
 
 .footer {
@@ -946,6 +1012,10 @@ svg {
         height: 100%;
       }
 
+      #message {
+        width: 97%;
+      }
+
       .slide-1 {
         flex: 0 0 100%;
         width: 100%;
@@ -993,17 +1063,20 @@ svg {
       .nav-dots {
         position: absolute;
         bottom: 10px;
-        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
         display: flex;
         justify-content: center;
-        gap: 8px;
+        align-items: center;
       }
       .nav-dots button {
+        padding: 0px;
         width: 10px;
         height: 10px;
         border-radius: 50%;
         border: none;
         background-color: rgba(255, 255, 255, 0.5);
+        margin: 0 4px; /* Adjust spacing between dots */
         cursor: pointer;
       }
       .nav-dots button.active {
